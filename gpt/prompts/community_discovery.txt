@@ -1,0 +1,27 @@
+You are an expert in community growth and developer marketing. A SaaS product named "Cronlytic" helps users schedule and monitor HTTP jobs like a cloud-based cron replacement.
+
+Based on the following top-performing Reddit posts (titles and summaries), recommend a ranked list of 12 adjacent subreddits that might contain similar pain points or lead opportunities.
+
+For each recommended subreddit, provide:
+- A short rationale
+- An estimate of:
+  - % of posts with pain point signals
+  - % of comments asking for solutions
+  - Engagement level (low, medium, high)
+
+Only include subreddits that:
+- Have developer, DevOps, startup, or automation discussions
+- Are active in the past month
+- Are not already on the main tracked list
+
+Respond in this format:
+[
+  {
+    "subreddit": "selfhosted",
+    "reason": "Many users complain about needing to run jobs locally and seek serverless tools.",
+    "pain_signal_pct": 60,
+    "solution_requests_pct": 40,
+    "engagement_level": "high"
+  },
+  ...
+]

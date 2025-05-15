@@ -1,0 +1,39 @@
+# Environment and credentials
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Log files
+logs/
+*.log
+
+# Database files
+data/db.sqlite
+data/exploratory_subreddits.json
+data/batch_responses/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+temp/

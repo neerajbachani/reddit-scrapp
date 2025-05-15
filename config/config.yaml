@@ -1,0 +1,54 @@
+# config/config.yaml
+
+# Target communities
+subreddits:
+  primary:
+    - devops
+    - selfhosted
+    - webdev
+    - SaaS
+    - learnprogramming
+    - startups
+    - sideproject
+    - experienceddevs
+  exploratory_limit: 12             # Max exploratory subreddits at a time
+  exploratory_refresh_days: 7       # How often to refresh improvised list
+  exploratory_percentage: 10        # % of posts from exploratory communities
+  primary_percentage: 90            # % of posts from configured communities
+
+# Reddit scraping settings
+scraper:
+  min_post_age_days: 5              # Post must be at least 5 days old
+  max_post_age_days: 30             # Ignore posts older than 3 months
+  max_items_per_day: 300            # Total posts/comments scraped per run
+  include_comments: true
+  rate_limit_per_minute: 60         # Reddit API rate limit
+
+# OpenAI settings
+openai:
+  model_filter: gpt-4o-mini        # For pre-filtering stage
+  model_deep: gpt-4.1               # For insight extraction
+  use_batch_api: true
+  monthly_budget_usd: 100           # Cost cap for safety
+  max_tokens_per_post: 1000         # Estimate for budgeting
+  cache_input: true                 # Reuse prompt if post is nearly identical
+
+# Scoring weights (used in filtering and final ranking)
+scoring:
+  relevance_weight: 0.4
+  emotion_weight: 0.2
+  pain_point_weight: 0.3
+  recent_activity_weight: 0.1       # Prioritize active threads
+  output_top_n: 10                  # Number of final posts to recommend
+
+# Database settings
+database:
+  path: data/db.sqlite
+  retention_days: 90                # Auto-remove posts older than this
+
+# Logging & output
+log_level: DEBUG                   # For debug & reuse
+save_batch_payloads: true           # For debug & reuse
+
+cleanup:
+  batch_response_retention_days: 3 # Cleanup batch responses older than this
